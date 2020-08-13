@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <title>学习中心</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link type="text/css" rel="stylesheet" href="styles/normalize.css"></link>
+  <link href="libs/jQuery/css/jquery-ui-1.9.2.custom.css" rel="stylesheet"></link>
+  <link type="text/css" rel="stylesheet" href="styles/global.css"></link>
+  <link type="text/css" rel="stylesheet" href="styles/icon.css"></link>
+  <link type="text/css" rel="stylesheet" href="styles/index.css"></link>
+  <link type="text/css" rel="stylesheet" href="styles/slider.css"></link>
+
+  <script type="text/javascript" src="libs/jQuery/js/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="libs/jQuery/js/jquery-ui-1.9.2.custom.js"></script>
+  <script type="text/javascript" src="libs/store/store.legacy.min.js"></script>
+  <script>
+    // store.set('user', { name:'Marcus' })
+    // store.get('user').name == 'Marcus'
+  </script>
+  <script type="text/javascript" src="utils/fullScreen.js"></script>
+  <script type="text/javascript" src="utils/index.js"></script>
+  <script type="text/javascript" src="scripts/cc_init.js"></script>
+</head>
+
+<body>
+  <!-- 侧边栏：sidebar  全屏：screen -->
+  <div id="zbg-video" class="zbg-video ">
+    <div class="zbg-video-main">
+      <div id="zbg-video-player" class="zbg-video-player">
+
+      </div>
+      <div class="control-header">
+        <p class="video-name">视频名称视频名称视频名称视频名称</p>
+        <a class="video-list js-player-list-btn hide" href="javascript:;">课程列表</a>
+      </div>
+      <button class="player-list-btn js-player-list-btn hide"></button>
+      <div class="zbg-video-control">
+        <div class="control-top">
+
+          <div id="control-progress-slider" class="control-progress-slider"></div>
+        </div>
+        <div class="control-left">
+          <a class="control-item-refresh control-icon " href="javascript:;">
+            <span class="icon icon-refresh js-play-refresh"></span>
+          </a>
+          <a class="control-item control-icon" href="javascript:;">
+            <span class="icon icon-prev js-play-prev"></span>
+          </a>
+          <a class="control-item control-icon play-video js-play-video" href="javascript:;">
+            <span class="icon icon-pause"></span>
+            <span class="icon icon-play"></span>
+          </a>
+          <a class="control-item control-icon" href="javascript:;">
+            <span class="icon icon-next js-play-next"></span>
+          </a>
+          <span id="control-time" class="control-time"></span>
+        </div>
+        <div class="control-right">
+          <div class="control-item control-hover hide" href="javascript:;">
+            <a class="control-btn" href="javascript:;">倍速</a>
+            <div class="control-hover-connect">
+              <a class="control-timeSpeed-item" href="javascript:;">2.0X</a>
+              <a class="control-timeSpeed-item" href="javascript:;">1.5X</a>
+              <a class="control-timeSpeed-item active" href="javascript:;">1.0X</a>
+              <a class="control-timeSpeed-item" href="javascript:;">0.5X</a>
+            </div>
+          </div>
+
+          <a class="control-item control-item-notes js-control-sidebar" href="javascript:;">
+            <span class="control-btn js-sidebar-btn" type="notes">笔记</span>
+          </a>
+          <a class="control-item control-item-answer js-control-sidebar" href="javascript:;">
+            <span class="control-btn js-sidebar-btn" type="answer">提问</span>
+          </a>
+          <a class="control-item js-control-sidebar" href="javascript:;">
+            <span class="control-btn js-sidebar-btn" type="error">纠错</span>
+          </a>
+          <a class="control-item control-icon control-hover" href="javascript:;">
+            <span class="icon icon-volume"></span>
+            <div class="control-volume control-hover-connect">
+              <p id="control-volume-value" class="control-volume-value">51%</p>
+              <div id="control-volume-slider" class="control-volume-slider"></div>
+            </div>
+          </a>
+          <a class="control-item control-icon  control-hover" href="javascript:;">
+            <span class="icon icon-full-screen js-full-screen"></span>
+            <!-- <div class="control-screen control-hover-connect">
+              <p id="control-screen-value" class="control-screen-value">51%</p>
+              <div id="control-screen-slider" class="control-screen-slider"></div>
+            </div> -->
+          </a>
+        </div>
+      </div>
+      <div class="zbg-video-playfinish">
+        <div class="playfinish-content">
+          <h3 class="playfinish-title">视频播放完毕</h3>
+          <div class="playfinish-btn">
+            <a class="playfinish-btn-refresh js-play-refresh" href="javascript:;">重新播放</a>
+            <a class="playfinish-btn-next js-play-next" href="javascript:;">继续下一个</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="zbg-video-playerror">
+        <div class="playerror-content">
+          <h3 class="playerror-title">很抱歉，当前视频播放失败，请刷新后再次尝试。</h3>
+          <div class="playerror-btn">
+            <a class="playerror-btn-reload js-play-reload" href="javascript:;">刷新试试</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="zbg-video-playerList">
+
+    </div>
+
+    <div class="zbg-video-sidebar">
+      <div class="sidebar-header">
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item sidebar-nav-notes" type="notes">笔记<span class="sidebar-nav-bottom"></span></li>
+          <li class="sidebar-nav-item sidebar-nav-answer" type="answer">提问<span class="sidebar-nav-bottom"></span></li>
+          <li class="sidebar-nav-item sidebar-nav-error" type="error">纠错<span class="sidebar-nav-bottom"></span></li>
+        </ul>
+
+        <a href="javascript:;" class="sidebar-close">X</a>
+      </div>
+
+
+
+      <div class="sidebar-body sidebar-body-notes">
+        <a href="javascript:;" class="sidebar-btn-video"></a>
+        <textarea class="sidebar-textarea" placeholder="输入笔记正文"></textarea>
+        <label class="sidebar-checkbox-label"><input class="sidebar-checkbox" type="checkbox" />设为公开笔记</label>
+      </div>
+
+      <div class="sidebar-body sidebar-body-answer">
+        <a href="javascript:;" class="sidebar-btn-video"></a>
+        <input class="sidebar-input-text" type="text" placeholder="请输入标题" />
+        <textarea class="sidebar-textarea" placeholder="输入提问正文"></textarea>
+      </div>
+
+      <div class="sidebar-body sidebar-body-error">
+        <a href="javascript:;" class="sidebar-btn-video"></a>
+        <div class="sidebar-select">
+          <p class="sidebar-select-title js-select-click">选择错误类型</p>
+          <ul class="sidebar-option-ul">
+            <li class="sidebar-option-li">无法播放</li>
+            <li class="sidebar-option-li">音画不同步</li>
+            <li class="sidebar-option-li">播放卡顿</li>
+            <li class="sidebar-option-li">内容错误</li>
+            <li class="sidebar-option-li">其他错误</li>
+          </ul>
+        </div>
+        <textarea class="sidebar-textarea" placeholder="感谢您的意见和体验感受，我们一定快速解决您的反馈！"></textarea>
+      </div>
+      <div class="sidebar-footer">
+        <button class="sidebar-submit">提交</button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script src="./scripts/playlist.js"></script>
+  <script src="./scripts/init.js"></script>
+  <script src="./scripts/event.js"></script>
+  <script src="./scripts/submit.js"></script>
+</body>
+
+</html>

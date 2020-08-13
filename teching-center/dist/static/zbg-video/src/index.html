@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zbg-video</title>
+    <script type="text/javascript" src="libs/jQuery/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="libs/jQuery-deparams/index.js"></script>
+    <script type="text/javascript" src="utils/index.js"></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      iframe接收的参数,加*的为必填, 
+      //courseType:  onlinecourse: 标准网课, ezcourse: ez课, classcourse: 优播课,facecourse: 面授课, livelesson: 直播课,
+      courseType="ezcourse" 
+      *ccid=313A5C7994F57292
+      siteid=
+      seek=
+      *token=
+      *memberId=
+      *memberName=
+      *phone=
+      *categoryId=
+      *categoryName=
+      *subjectId=
+      *subjectName=
+      *classId=
+      *courseId=
+      *courseName=
+      *chapterId=
+      *chapterName=
+      *taskId=
+      *taskName=
+      *videoList=
+      isSidebar= 是否显示侧边栏 默认显示 true 显示 false 隐藏
+    -->
+    
+    <iframe id="iframe" name="zbg-video" allowtransparency="true" width="100%" height="100%" scrolling="no" frameborder="0" src='' allowfullscreen="true"></iframe>
+
+    <script>
+      console.log(window.parent.playList)
+      window.playList = window.parent.playList;
+      var iframeSrcQuery = {
+        courseType: GetQueryString('courseType'),
+        ccid: GetQueryString('ccid'),
+        siteid: GetQueryString('siteid') || GetQueryString('ccid'),
+        seek: GetQueryString('seek'),
+        token: GetQueryString('token'),
+        memberId: GetQueryString('memberId'),
+        memberName: GetQueryString('memberName'),
+        phone: GetQueryString('phone'),
+        categoryId: GetQueryString('categoryId'),
+        categoryName: GetQueryString('categoryName'),
+        subjectId: GetQueryString('subjectId'),
+        subjectName: GetQueryString('subjectName'),
+        classId: GetQueryString('classId'),
+        courseId: GetQueryString('courseId'),
+        courseName: GetQueryString('courseName'),
+        chapterId: GetQueryString('chapterId'),
+        chapterName: GetQueryString('chapterName'),
+        taskId: GetQueryString('taskId'),
+        taskName: GetQueryString('taskName'),
+        isSidebar: GetQueryString("isSidebar"),
+      }
+      
+      var iframeSrc = 'cc_video.html?'+$.param(iframeSrcQuery);
+      $('#iframe').attr('src',iframeSrc);
+
+      
+      
+      
+      
+    </script>
+  </body>
+</html>

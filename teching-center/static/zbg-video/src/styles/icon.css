@@ -1,0 +1,76 @@
+.zbg-video .icon{
+  display: inline-block;
+  
+}
+.zbg-video .icon-prev{
+  width: 20px;
+  height: 18px;
+  background: url('../images/icon_prev.png') no-repeat;
+}
+.zbg-video .icon-pause{
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url('../images/icon_pause.png') no-repeat;
+  background-size: 18px;
+}
+.zbg-video .play-video.active .icon-pause{
+  display: none;
+}
+.zbg-video .icon-play{
+  display: none;
+  width: 16px;
+  height: 22px;
+  background: url('../images/icon_next.png') no-repeat;
+  background-size: 22px;
+}
+.zbg-video .play-video.active .icon-play{
+  display: inline-block;
+}
+
+.zbg-video .icon-next{
+  width: 20px;
+  height: 18px;
+  background: url('../images/icon_next.png') no-repeat;
+}
+
+.zbg-video .icon-volume{
+  width: 18px;
+  height: 18px;
+  background: url('../images/icon_volume.png') no-repeat;
+}
+.zbg-video .icon-full-screen{
+  width: 18px;
+  height: 18px;
+  background: url('../images/icon_full_screen.png') no-repeat;
+}
+.zbg-video .icon-refresh{
+  width: 18px;
+  height: 18px;
+  background: url('../images/icon_refresh.png') no-repeat;
+}
+.zbg-video .icon-video{
+  width: 16px;
+  height: 16px;
+  background: url('../images/icon-video.png') no-repeat;
+}
+.zbg-video .icon-live{
+  width: 18px;
+  height: 12px;
+  background: url('../images/icon-live.png') no-repeat;
+}
+.zbg-video .icon-evaluation{
+  width: 38px;
+  height: 18px;
+  background: url('../images/icon-evaluation.png') no-repeat;
+}
+.zbg-video .icon-practice{
+  width: 38px;
+  height: 18px;
+  background: url('../images/icon-practice.png') no-repeat;
+}
+.zbg-video .icon-pdfread{
+  width: 38px;
+  height: 18px;
+  background: url('../images/icon-pdfread.png') no-repeat;
+}
